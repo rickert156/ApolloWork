@@ -20,29 +20,24 @@ print('-'*45)
 
 
 try:
-	driver.get("https://app.apollo.io/#/settings/account/mailboxes")
-	driver.maximize_window()
-	time.sleep(3)
+	def start():
+		driver.get("https://app.apollo.io/#/settings/account/mailboxes")
+		driver.maximize_window()
+		time.sleep(3)
 
-	email_login = driver.find_element(By.NAME, 'email')
-	email_login.send_keys(user_login)
-	time.sleep(1)
-	password = driver.find_element(By.NAME, 'password')
-	password.send_keys(user_password)
-	password.send_keys(Keys.ENTER)
-	time.sleep(5)
+		email_login = driver.find_element(By.NAME, 'email')
+		email_login.send_keys(user_login)
+		time.sleep(1)
+		password = driver.find_element(By.NAME, 'password')
+		password.send_keys(user_password)
+		password.send_keys(Keys.ENTER)
+		time.sleep(5)
 
-	slack_payload = {"text": f"[{machine}]Parser Apollo. Step 2 Start..."}
+		slack_payload = {"text": f"[{machine}]Parser Apollo. Step 2 Start..."}
 
-	SendSlack(slack_payload)
+		SendSlack(slack_payload)
 
 
-
-	with open('result.csv', 'a', newline='', encoding='utf-8') as file:  # Используем режим 'a' для добавления данных
-		writer = csv.writer(file)
-		new_table = input('Are we creating a new table[y/n]? ')
-		if new_table == 'y':
-			writer.writerow(["Name", "Job title", "Email", "Company Name", "Location", "Phone", "Linkedin", "Twitter", "Facebook"])
 
 	def persLink():
 		num=0
@@ -129,11 +124,16 @@ try:
 						writer.writerow([name_persone, job_title, email, company_name, location, phone_number, linkedin_url, twitter_url, facebook_url])
 						print('Data written to CSV.\n', '-'*20)
 						shutil.move(f'Collected/{file_json}', f'Done/{file_json}')
+						if num == 49:
 
 					except:
 						pass
 
-	persLink()
+	def main():
+		start()
+		persLink()
+
+	main()
 
 except Exception as ex:
 	print(ex)

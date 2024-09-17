@@ -71,7 +71,7 @@ try:
 
 		print(f'Job Title: {personSeniorities}')
 		
-		organizationIndustryTagIds = input('\nSelect a Indastrial, default will be Graphical Design(y): \n1. Graphical Design\n2. Banking\n3. Computer Games\n4. Design\n5. Political Organization\n6. Programm Dev\n7. Animation\n8. Design\n9. Computer software\n10. Venture Capital & Private Equity\nSelect a Indastrial: ')
+		organizationIndustryTagIds = input('\nSelect a Indastrial, default will be Graphical Design(y): \n1. Graphical Design\n2. Banking\n3. Computer Games\n4. Design\n5. Political Organization\n6. Programm Dev\n7. Animation\n8. Design\n9. Computer software\n10. Venture Capital & Private Equity\n11. Commercial Real Estate\n12. Computer & Network Security\nSelect a Indastrial: ')
 		if organizationIndustryTagIds == '' or organizationIndustryTagIds == '1' or organizationIndustryTagIds == 'y':organizationIndustryTagIds = '5567cd4d73696439d9040000'
 		elif organizationIndustryTagIds == '2':organizationIndustryTagIds = '5567ce237369644ee5490000'
 		elif organizationIndustryTagIds == '3':organizationIndustryTagIds = '5567cd8b736964540d0f0000'
@@ -82,6 +82,8 @@ try:
 		elif organizationIndustryTagIds == '8':organizationIndustryTagIds = '5567cdbc73696439d90b0000'
 		elif organizationIndustryTagIds == '9':organizationIndustryTagIds = '5567cd4e7369643b70010000'
 		elif organizationIndustryTagIds == '10':organizationIndustryTagIds = '5567e1587369641c48370000'
+        elif organizationIndustryTagIds == '11':organizationIndustryTagIds = '5567e1887369641d68d40100'
+        elif organizationIndustryTagIds == '12':organizationIndustryTagIds = '5567cd877369644cf94b0000'
 		else: organizationIndustryTagIds = organizationIndustryTagIds
 
 	

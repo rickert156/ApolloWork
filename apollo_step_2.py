@@ -124,7 +124,7 @@ try:
 						writer.writerow([name_persone, job_title, email, company_name, location, phone_number, linkedin_url, twitter_url, facebook_url])
 						print('Data written to CSV.\n', '-'*20)
 						shutil.move(f'Collected/{file_json}', f'Done/{file_json}')
-						if num == 49:
+						if num == 50:break
 
 					except:
 						pass

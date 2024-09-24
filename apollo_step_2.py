@@ -23,7 +23,7 @@ try:
 	def start():
 		driver.get("https://app.apollo.io/#/settings/account/mailboxes")
 		driver.maximize_window()
-		time.sleep(3)
+		time.sleep(10)
 
 		email_login = driver.find_element(By.NAME, 'email')
 		email_login.send_keys(user_login)
@@ -56,9 +56,9 @@ try:
 						print('\n')
 						print('-'*5, f'Persone {num}', '-'*5)
 						try:
-							button_email = driver.find_element(By.CLASS_NAME, 'zp-button.zp_zUY3r.zp_n9QPr.zp_eFcMr')
+							button_email = driver.find_element(By.CLASS_NAME, 'zp-icon.apollo-icon.apollo-icon-download.zp_lGtdl.zp_XjMSO.zp_d49Jz')
 							button_email.click()
-							time.sleep(3)
+							time.sleep(5)
 						except:
 							pass
 						try:
@@ -68,25 +68,25 @@ try:
 							name_persone = 'Not Defined'
 							print(f'Name: {name_persone}')
 						try:
-							job_title = driver.find_element(By.CLASS_NAME, 'zp_LkFHT').text
+							job_title = driver.find_element(By.CLASS_NAME, 'zp_eJzb5').text
 							print(f'Job Title: {job_title}')
 						except:
 							job_title = 'Not Defined'
 							print(f'Job Title: {job_title}')
 						try:
-							email = driver.find_element(By.CLASS_NAME, 'zp-link.zp_OotKe.zp_dAPkM.zp_Iu6Pf').text
+							email = driver.find_element(By.CLASS_NAME, 'zp_p4M34.zp_q6Sul.zp_dAPkM.zp_Iu6Pf').text
 							print(f'Email: {email}')
 						except:
 							email = 'Not Defined'
 							print(f'Email: {email}')
 						try:
-							company_name = driver.find_element(By.CLASS_NAME, 'zp-link.zp_OotKe.zp_ZwCrs').text
+							company_name = driver.find_element(By.CLASS_NAME, 'zp_p4M34.zp_q6Sul').text
 							print(f'Company Name: {company_name}')
 						except:
 							company_name = 'Not Defined'
 							print(f'Company Name: {company_name}')
 						try:
-							location = driver.find_element(By.XPATH, '//*[@id="location_detail_card"]/div/div/div/div/div[2]/div/div/form/div[4]/div/div[2]/div/div/div[1]/div[2]').text
+							location = driver.find_element(By.CLASS_NAME, 'zp_sai5_').text
 							print(f'Location: {location}')
 						except:
 							location = 'Not Defined'

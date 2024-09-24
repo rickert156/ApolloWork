@@ -28,7 +28,7 @@ if not os.path.exists('Done'):
 try:
 	driver.get("https://app.apollo.io/#/settings/account/mailboxes")
 	driver.maximize_window()
-	time.sleep(3)
+	time.sleep(10)
 
 	email_login = driver.find_element(By.NAME, 'email')
 	email_login.send_keys(user_login)
@@ -43,18 +43,18 @@ try:
 	SendSlack(slack_payload)
 
 	def persUrl():
-		personLocations = input("""
-		Select a location, default will be United States(y): 
-			1. United States
-			2. India
-			3. Russia
-			4. Ukraine
-			5. Europe
-			6. North America
-			7. Americas
-			8. Australia
-			9. United Kingdom
-		Select a Location: """)
+		personLocations = input(
+"""Select a location, default will be United States(y): 
+	1. United States
+	2. India
+	3. Russia
+	4. Ukraine
+	5. Europe
+	6. North America
+	7. Americas
+	8. Australia
+	9. United Kingdom
+Select a Location: """)
 		if personLocations == 'y' or personLocations == '' or personLocations == '':personLocations = 'United States'
 		elif personLocations == '2':personLocations = 'India'
 		elif personLocations == '3':personLocations = 'Russia'
@@ -68,17 +68,17 @@ try:
 
 		print(f'Location: {personLocations}')
 
-		personSeniorities = input("""
-		Select a Job Titles, default will be Owner(y): 
-			1. Owner
-			2. Founder
-			3. Partner
-			4. Vp
-			5. Head
-			6. Director
-			7. Manager
-			8. C Suite
-		Select a Job Titles: """)
+		personSeniorities = input(
+"""Select a Job Titles, default will be Owner(y): 
+	1. Owner
+	2. Founder
+	3. Partner
+	4. Vp
+	5. Head
+	6. Director
+	7. Manager
+	8. C Suite
+Select a Job Titles: """)
 		if personSeniorities == 'owner' or personSeniorities == '1':personSeniorities = 'owner'
 		elif personSeniorities == 'y' or personSeniorities == '':personSeniorities = 'owner'
 		elif personSeniorities == '2':personSeniorities = 'founder'
@@ -92,22 +92,22 @@ try:
 
 		print(f'Job Title: {personSeniorities}')
 		
-		organizationIndustryTagIds = input("""
-		Select a Indastrial, default will be Graphical Design(y): 
-			1. Graphical Design
-			2. Banking
-			3. Computer Games
-			4. Design
-			5. Political Organization
-			6. Program Development
-			7. Animation
-			8. Design
-			9. Computer software
-			10. Venture Capital & Private Equity
-			11. Commercial Real Estate
-			12. Computer & Network Security
-			13. E-learning
-		Select a Indastrial: """)
+		organizationIndustryTagIds = input(
+"""Select a Indastrial, default will be Graphical Design(y): 
+	1. Graphical Design
+	2. Banking
+	3. Computer Games
+	4. Design
+	5. Political Organization
+	6. Program Development
+	7. Animation
+	8. Design
+	9. Computer software
+	10. Venture Capital & Private Equity
+	11. Commercial Real Estate
+	12. Computer & Network Security
+	13. E-learning
+Select a Indastrial: """)
 		if organizationIndustryTagIds == '' or organizationIndustryTagIds == '1' or organizationIndustryTagIds == 'y':organizationIndustryTagIds = '5567cd4d73696439d9040000'
 		elif organizationIndustryTagIds == '2':organizationIndustryTagIds = '5567ce237369644ee5490000'
 		elif organizationIndustryTagIds == '3':organizationIndustryTagIds = '5567cd8b736964540d0f0000'
@@ -126,7 +126,7 @@ try:
 	
 		organizationNumEmployeesRanges_min = input('Select the MINIMUM number of employees: ')
 		organizationNumEmployeesRanges_max = input('Select the MAXIMUM number of employees: ')
-		print('\n')
+
 		page = 0
 		pages = int(input("How many search pages do you need to go through? "))
 		while page < pages:

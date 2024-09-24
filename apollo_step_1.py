@@ -38,12 +38,13 @@ try:
 	password.send_keys(Keys.ENTER)
 	time.sleep(5)
 
-	slack_payload = {"text": f"[{machine}]Parser Apollo. Step 1 Start..."}
+	slack_payload = {"text": f"[{machine}]Parser Apollo. Step 1 Start(Отладка парсера)..."}
 
 	SendSlack(slack_payload)
 
 	def persUrl():
-		personLocations = input("""Select a location, default will be United States(y): 
+		personLocations = input("""
+		Select a location, default will be United States(y): 
 			1. United States
 			2. India
 			3. Russia
@@ -53,7 +54,7 @@ try:
 			7. Americas
 			8. Australia
 			9. United Kingdom
-			Select a Location: """)
+		Select a Location: """)
 		if personLocations == 'y' or personLocations == '' or personLocations == '':personLocations = 'United States'
 		elif personLocations == '2':personLocations = 'India'
 		elif personLocations == '3':personLocations = 'Russia'
@@ -68,7 +69,7 @@ try:
 		print(f'Location: {personLocations}')
 
 		personSeniorities = input("""
-			Select a Job Titles, default will be Owner(y): 
+		Select a Job Titles, default will be Owner(y): 
 			1. Owner
 			2. Founder
 			3. Partner
@@ -77,8 +78,7 @@ try:
 			6. Director
 			7. Manager
 			8. C Suite
-			Select a Job Titles: 
-			""")
+		Select a Job Titles: """)
 		if personSeniorities == 'owner' or personSeniorities == '1':personSeniorities = 'owner'
 		elif personSeniorities == 'y' or personSeniorities == '':personSeniorities = 'owner'
 		elif personSeniorities == '2':personSeniorities = 'founder'
@@ -93,7 +93,7 @@ try:
 		print(f'Job Title: {personSeniorities}')
 		
 		organizationIndustryTagIds = input("""
-			Select a Indastrial, default will be Graphical Design(y): 
+		Select a Indastrial, default will be Graphical Design(y): 
 			1. Graphical Design
 			2. Banking
 			3. Computer Games
@@ -107,7 +107,7 @@ try:
 			11. Commercial Real Estate
 			12. Computer & Network Security
 			13. E-learning
-			Select a Indastrial: """)
+		Select a Indastrial: """)
 		if organizationIndustryTagIds == '' or organizationIndustryTagIds == '1' or organizationIndustryTagIds == 'y':organizationIndustryTagIds = '5567cd4d73696439d9040000'
 		elif organizationIndustryTagIds == '2':organizationIndustryTagIds = '5567ce237369644ee5490000'
 		elif organizationIndustryTagIds == '3':organizationIndustryTagIds = '5567cd8b736964540d0f0000'
@@ -128,7 +128,7 @@ try:
 		organizationNumEmployeesRanges_max = input('Select the MAXIMUM number of employees: ')
 		print('\n')
 		page = 0
-		pages = int(input("\nHow many search pages do you need to go through? "))
+		pages = int(input("How many search pages do you need to go through? "))
 		while page < pages:
 			page+=1
 			driver.get(f'https://app.apollo.io/#/people?finderViewId=5b6dfc5a73f47568b2e5f11c&page={page}&personLocations[]={personLocations}&personSeniorities[]={personSeniorities}&organizationIndustryTagIds[]={organizationIndustryTagIds}&organizationNumEmployeesRanges[]={organizationNumEmployeesRanges_min}%2C{organizationNumEmployeesRanges_max}')

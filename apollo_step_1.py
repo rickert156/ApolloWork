@@ -38,7 +38,7 @@ try:
 	password.send_keys(Keys.ENTER)
 	time.sleep(5)
 
-	slack_payload = {"text": f"[{machine}]Parser Apollo. Step 1 Start(Отладка парсера)..."}
+	slack_payload = {"text": f"[{machine}]Parser Apollo. Step 1 Start..."}
 
 	SendSlack(slack_payload)
 
@@ -46,24 +46,24 @@ try:
 		personLocations = input(
 """Select a location, default will be United States(y): 
 	1. United States
-	2. India
-	3. Russia
-	4. Ukraine
-	5. Europe
+	2. Australia
+	3. United Kingdom
+	4. Europe
+	5. Americas
 	6. North America
-	7. Americas
-	8. Australia
-	9. United Kingdom
+	7. Russia
+	8. Ukraine
+	9. India
 Select a Location: """)
 		if personLocations == 'y' or personLocations == '' or personLocations == '':personLocations = 'United States'
-		elif personLocations == '2':personLocations = 'India'
-		elif personLocations == '3':personLocations = 'Russia'
-		elif personLocations == '4':personLocations = 'Ukraine'
-		elif personLocations == '5':personLocations = 'Europe'
+		elif personLocations == '2':personLocations = 'Australia'
+		elif personLocations == '3':personLocations = 'United Kingdom'
+		elif personLocations == '4':personLocations = 'Europe'
+		elif personLocations == '5':personLocations = 'Americas'
 		elif personLocations == '6':personLocations = 'North America'
-		elif personLocations == '7':personLocations = 'Americas'
-		elif personLocations == '8':personLocations = 'Australia'
-		elif personLocations == '9':personLocations = 'United Kingdom'
+		elif personLocations == '7':personLocations = 'Russia'
+		elif personLocations == '8':personLocations = 'Ukraine'
+		elif personLocations == '9':personLocations = 'India'
 		else: personLocations = 'United States'
 
 		print(f'Location: {personLocations}')
@@ -107,7 +107,10 @@ Select a Job Titles: """)
 	11. Commercial Real Estate
 	12. Computer & Network Security
 	13. E-learning
+	14. Human Resources
 Select a Indastrial: """)
+		print(f'Indastrial: {organizationIndustryTagIds}')
+
 		if organizationIndustryTagIds == '' or organizationIndustryTagIds == '1' or organizationIndustryTagIds == 'y':organizationIndustryTagIds = '5567cd4d73696439d9040000'
 		elif organizationIndustryTagIds == '2':organizationIndustryTagIds = '5567ce237369644ee5490000'
 		elif organizationIndustryTagIds == '3':organizationIndustryTagIds = '5567cd8b736964540d0f0000'
@@ -121,6 +124,7 @@ Select a Indastrial: """)
 		elif organizationIndustryTagIds == '11':organizationIndustryTagIds = '5567e1887369641d68d40100'
 		elif organizationIndustryTagIds == '12':organizationIndustryTagIds = '5567cd877369644cf94b0000'
 		elif organizationIndustryTagIds == '13':organizationIndustryTagIds = '5567e19c7369641c48e70100'
+		elif organizationIndustryTagIds == '14':organizationIndustryTagIds = '5567e0e37369640e5ac10c00'
 		else: organizationIndustryTagIds = organizationIndustryTagIds
 
 	

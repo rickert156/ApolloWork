@@ -139,8 +139,10 @@ Select a Indastrial: """)
 			time.sleep(2)	        
 
 			print("------\nPage ", page, " Found\n------")
+
+
 			
-			blocks = driver.find_elements(By.CLASS_NAME, 'zp_xVJ20')
+			blocks = driver.find_elements(By.CLASS_NAME, 'zp_UNSqJ')
 			num = 0
 			links = []
 			for block in blocks:

@@ -54,6 +54,7 @@ try:
 	7. Russia
 	8. Ukraine
 	9. India
+	10. Canada
 Select a Location: """)
 		if personLocations == 'y' or personLocations == '' or personLocations == '':personLocations = 'United States'
 		elif personLocations == '2':personLocations = 'Australia'
@@ -64,6 +65,7 @@ Select a Location: """)
 		elif personLocations == '7':personLocations = 'Russia'
 		elif personLocations == '8':personLocations = 'Ukraine'
 		elif personLocations == '9':personLocations = 'India'
+		elif personLocations == '10':personLocations = 'Canada'
 		else: personLocations = 'United States'
 
 		print(f'Location: {personLocations}')
@@ -108,6 +110,10 @@ Select a Job Titles: """)
 	12. Computer & Network Security
 	13. E-learning
 	14. Human Resources
+	15. Capital Markets
+	16. Fund-Raising
+	17. Investment Banking
+	18. Investment Management
 Select a Indastrial: """)
 		print(f'Indastrial: {organizationIndustryTagIds}')
 
@@ -125,9 +131,12 @@ Select a Indastrial: """)
 		elif organizationIndustryTagIds == '12':organizationIndustryTagIds = '5567cd877369644cf94b0000'
 		elif organizationIndustryTagIds == '13':organizationIndustryTagIds = '5567e19c7369641c48e70100'
 		elif organizationIndustryTagIds == '14':organizationIndustryTagIds = '5567e0e37369640e5ac10c00'
+		elif organizationIndustryTagIds == '15':organizationIndustryTagIds = '5567cdb773696439a9080000'
+		elif organizationIndustryTagIds == '16':organizationIndustryTagIds = '5567d2ad7261697f2b1f0100'
+		elif organizationIndustryTagIds == '17':organizationIndustryTagIds = '5567e1ab7369641f6d660100'
+		elif organizationIndustryTagIds == '18':organizationIndustryTagIds = '5567e0bc7369641d11550200'
 		else: organizationIndustryTagIds = organizationIndustryTagIds
 
-	
 		organizationNumEmployeesRanges_min = input('Select the MINIMUM number of employees: ')
 		organizationNumEmployeesRanges_max = input('Select the MAXIMUM number of employees: ')
 
@@ -139,8 +148,6 @@ Select a Indastrial: """)
 			time.sleep(2)	        
 
 			print("------\nPage ", page, " Found\n------")
-
-
 			
 			blocks = driver.find_elements(By.CLASS_NAME, 'zp_UNSqJ')
 			num = 0

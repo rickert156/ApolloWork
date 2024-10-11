@@ -55,6 +55,19 @@ try:
 						time.sleep(5)
 						print('\n')
 						print('-'*5, f'Persone {num}', '-'*5)
+
+						try:
+							time.sleep(2)
+							close_modal = driver.find_element(By.CLASS_NAME, 'zp-icon.mdi.mdi-close.zp_QUSTG.zp_K7tmh.zp_IMabJ')
+							close_modal.click()
+							print('Click and close modal window')
+						except:
+							pass
+						try:
+							close_modal = driver.find_element(By.CLASS_NAME, 'zp_qe0Li.zp_S5tZC.zp_nQ45Z')
+							close_modal.click()
+							print('Click and close modal window')
+						except:pass
 						try:
 							button_email = driver.find_element(By.CLASS_NAME, 'zp-icon.apollo-icon.apollo-icon-download.zp_QUSTG.zp_K7tmh.zp_NGTfw')
 							button_email.click()
@@ -143,3 +156,4 @@ finally:
 	driver.close()
 	driver.quit()
 
+zp_qe0Li zp_S5tZC zp_nQ45Z

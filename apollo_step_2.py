@@ -56,37 +56,37 @@ try:
 						print('\n')
 						print('-'*5, f'Persone {num}', '-'*5)
 						try:
-							button_email = driver.find_element(By.CLASS_NAME, 'zp-icon.apollo-icon.apollo-icon-download.zp_lGtdl.zp_XjMSO.zp_d49Jz')
+							button_email = driver.find_element(By.CLASS_NAME, 'zp-icon.apollo-icon.apollo-icon-download.zp_QUSTG.zp_K7tmh.zp_NGTfw')
 							button_email.click()
 							time.sleep(5)
 						except:
 							pass
 						try:
-							name_persone = driver.find_element(By.CLASS_NAME, 'zp_Ln9Ws.EditTarget').text
+							name_persone = driver.find_element(By.CLASS_NAME, 'zp-inline-edit-popover-trigger.zp_uH2hd.zp_voKSC.zp_drD_u').text
 							print(f'Name: {name_persone}')
 						except:
 							name_persone = 'Not Defined'
 							print(f'Name: {name_persone}')
 						try:
-							job_title = driver.find_element(By.CLASS_NAME, 'zp_eJzb5').text
+							job_title = driver.find_element(By.CLASS_NAME, 'zp_usEUk').text
 							print(f'Job Title: {job_title}')
 						except:
 							job_title = 'Not Defined'
 							print(f'Job Title: {job_title}')
 						try:
-							email = driver.find_element(By.CLASS_NAME, 'zp_p4M34.zp_q6Sul.zp_dAPkM.zp_Iu6Pf').text
+							email = driver.find_element(By.CLASS_NAME, 'zp_p2Xqs.zp_v565m.zp_N3Yvt.zp_kOWmA').text
 							print(f'Email: {email}')
 						except:
 							email = 'Not Defined'
 							print(f'Email: {email}')
 						try:
-							company_name = driver.find_element(By.CLASS_NAME, 'zp_p4M34.zp_q6Sul').text
+							company_name = driver.find_element(By.CLASS_NAME, 'zp_p2Xqs.zp_v565m').text
 							print(f'Company Name: {company_name}')
 						except:
 							company_name = 'Not Defined'
 							print(f'Company Name: {company_name}')
 						try:
-							location = driver.find_element(By.CLASS_NAME, 'zp_sai5_').text
+							location = driver.find_element(By.CLASS_NAME, 'zp_U0WNp').text
 							print(f'Location: {location}')
 						except:
 							location = 'Not Defined'
